@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>La Corbeille Mangeuse</title>
+    <link rel="icon" type="image/png" sizes="100x100" href="https://cdn.discordapp.com/attachments/1069251048948113411/1110657144505782412/ad.png">
     <style>
         img {width:50px; position: absolute; top: 500px; left: 570px; visibility: hidden;}
         .affichage {width:170px; border: 1px solid #00f; background-color: #21d; text-align: center; font-size: 15px; margin-left: None; margin-right: auto; margin-top: 8px;}
-        button {background-color: red; border-color:blue; font-size:50px; margin: 0 auto; text-align: center; color: blue; padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center;}
+        button {background-color: red; border-color:gold; font-size:50px; margin: 0 auto; text-align: center; color: blue; padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center;}
+        .start {background-color: #a00; width: 400px; height:250px; border: 3px solid blue; color: #44f; margin: 0 auto; text-align: center;}
     </style>
 </head>
 <body style="background-color: #ddf;">
@@ -21,7 +23,7 @@
     <img id="sev" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110657144505782412/ad.png"/>
     <img id="hei" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110657144505782412/ad.png"/>
     <img id="nin" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110657144505782412/ad.png"/>
-    <button id="button" onclick="loop()">Start</button>
+    <div id="start" class="start"><p>Pour déplacer la poubelle,</br>utiliser les flèches droite et gauche.</p><button onclick="loop()">Start</button></div>
     
     <script>
         function loop() {
