@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .rectangle { position: absolute; left: 90px; top: 10px; width: 1000px; height:550px; border: 30px solid #005; padding: 8px 12px; background-color: #ddf; text-align: right; text-decoration: #005; font-size: 40px; }
+        </style>
+    </head>
+    <body style="background-color: black;">
+        <div id="rectangle"; class="rectangle"><p id="time">0</p></div>
+        <img id="image" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110655874344689776/VVt.png" width=50px style="position: absolute; top: 500px; left: 570px;"/>
+        <div id="raquette" style="width: 120px; height:20px; background-color:#777; position: absolute; top: 550px; left: 570px;"></div>
+        <h1 id="score"; style="color: red; text-align: center; font-size: 200px;"></h1>
+        <script language="JavaScript">
+            function time() {vtime+=1; document.getElementById("time").innerHTML = vtime; setTimeout(time,1000);}
+            function GRimage() {
+                document.getElementById("image").style.width = GRi+"px";
+                document.getElementById("image").style.left = ximg-GRi/2+"px";
+                document.getElementById("image").style.top = yimg-GRi/2+"px";
+                if (GRi<500) {GRi+=5;}; setTimeout(GRimage, 50);
+            }
+            function end() {
+                raquette.remove();
+                rectangle.remove();
+                document.getElementById("score").innerHTML = "Game Over !";
+                GRimage();
+            }
+            function touche() {
+                if (event.keyCode==37 && xraquette>=150) {xraquette-=40;};
+                if (event.keyCode==39 && xraquette<=1000) {xraquette+=40;};
+                document.getElementById("raquette").style.left = xraquette+"px";
+            }
+            function loop() {
+                if (ximg <= 125) {vitesse+=0.1; ximgdir = Math.random()*8*vitesse+2;}
+                if (ximg >= 1085) {vitesse+=0.1; ximgdir = -Math.random()*8*vitesse+2;}
+                if (yimg <= 45) {vitesse+=0.1; yimgdir = Math.random()*8*vitesse+2;}
+                if (yimg >= 480) { 
+                    if (xraquette-40<=ximg && xraquette+110>=ximg) {vitesse+=0.1; yimgdir = -Math.random()*8*vitesse+2;}
+                    else {end();exitloop;}
+                    }
+                document.getElementById("image").style.top = yimg+"px";
+                document.getElementById("image").style.left = ximg+"px";
+                ximg+=ximgdir;
+                yimg+=yimgdir;
+                setTimeout(loop, 33);
+            }
+            var xraquette = 570;
+            var ximg = Math.random()*970+120;// 120-1090
+            var yimg = 40;
+            var ximgdir = Math.random()*6+2;
+            var yimgdir = Math.random()*6+2;
+            var vitesse = 1;
+            var vtime = -1;
+            let GRi = 30;
+            alert('Utilisez les flèches droite et gauche pour diriger la raquette, afin que la "balle" ne touche pas le sol.')
+            loop()
+            time()
+            document.onkeydown = touche;
+        </script>
+    </body>
+</html>
