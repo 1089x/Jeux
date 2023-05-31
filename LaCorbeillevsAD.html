@@ -28,7 +28,7 @@
     <button id="recommencer" onclick="recommencer()" style="background-color: #00f; color: #ddf; visibility: hidden;">Recommencer</button>
 
     <script LANGUAGE="JavaScript">
-        function recommencer() {document.location.href="https://1089x.github.io/LaCorbeille/";};
+        function recommencer() {document.location.href="https://1089x.github.io/LaCorbeille/LaCorbeillevsAD";};
         function loop() {
         start.remove()
         function end() {if(chance > 0){chance-=1; document.getElementById("chances").innerHTML = "Chances: "+chance} else{pannnier.remove(); one.remove(); two.remove(); thr.remove(); fou.remove(); fiv.remove(); six.remove(); sev.remove(); hei.remove(); nin.remove(); document.getElementById("affichage").style.width="500px"; document.getElementById("affichage").style.height="300px"; document.getElementById("affichage").style.marginLeft = "auto"; document.getElementById("affichage").style.marginTop = "200px"; if(score < 5){document.getElementById("chances").innerHTML = "Score faible. Entraine toi plus."} else if(score > 19){document.getElementById("chances").innerHTML = "Quel nettoyage !"} else{document.getElementById("chances").innerHTML = "Bon nettoyage !"}; document.getElementById("affichage").style.fontSize = "30px"; document.getElementById("recommencer").style.visibility = "visible"; };}
