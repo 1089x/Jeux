@@ -1,1 +1,99 @@
-<p>azertyuiop</p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>La Corbeille Mangeuse</title>
+    <link rel="icon" type="image/png" sizes="100x100" href="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png">
+    <style>
+        img {width:50px; position: absolute; top: 500px; left: 570px; visibility: hidden;}
+        .affichage {width:170px; border: 1px solid #00f; background-color: #21f; text-align: center; font-size: 15px; margin-left: None; margin-right: auto; margin-top: 8px;}
+        button {background-color: red; border-color:gold; font-size:50px; margin: 0 auto; text-align: center; color: blue; padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center;}
+        .start {background-color: #a00; width: 400px; height:250px; border: 3px solid blue; color: #44f; margin: 0 auto; text-align: center;}
+    </style>
+</head>
+<body style="background-color: #ddf;">
+    <div class="affichage" id="affichage" ><h1 id="score">Score: 0</h1><h2 id="chances">Chances: 3</h2></div>
+    <img id="pannnier" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110656019085922425/corbeillecomp.png" style="width: 110px; height:110px; position: absolute; top: 570px; left: 585px; visibility: visible;"></img>
+    <img id="one" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="two" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="thr" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="fou" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="fiv" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="six" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="sev" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="hei" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <img id="nin" src="https://cdn.discordapp.com/attachments/1069251048948113411/1112732581327290408/ML.png"/>
+    <div id="start" class="start"><p>Pour déplacer la poubelle,</br>utiliser les flèches droite et gauche.</p><button onclick="loop()">Start</button></div>
+    </br>
+    <button id="recommencer" onclick="recommencer()" style="background-color: #00f; color: #ddf; visibility: hidden;">Recommencer</button>
+    
+    <script LANGUAGE="JavaScript">
+        //visibility: hidden
+        //style="width: 400px; height:60px; margin: 0 auto;"
+        //document.location.href="https://1089x.github.io/LaCorbeille/"
+        //window.location.replace='https://1089x.github.io/LaCorbeille/'
+        //pannnier.remove();
+        function recommencer() {document.location.href="https://1089x.github.io/Jeux/LaCorbeillevsML";};
+        function loop() {
+        start.remove()
+        function end() {if(chance > 0){chance-=1; document.getElementById("chances").innerHTML = "Chances: "+chance} else{pannnier.remove(); one.remove(); two.remove(); thr.remove(); fou.remove(); fiv.remove(); six.remove(); sev.remove(); hei.remove(); nin.remove(); document.getElementById("affichage").style.width="500px"; document.getElementById("affichage").style.height="300px"; document.getElementById("affichage").style.marginLeft = "auto"; document.getElementById("affichage").style.marginTop = "200px"; if(score < 5){document.getElementById("chances").innerHTML = "Score faible. Entraine toi plus."} else if(score > 19){document.getElementById("chances").innerHTML = "Quel nettoyage !"} else{document.getElementById("chances").innerHTML = "Bon nettoyage !"}; document.getElementById("affichage").style.fontSize = "30px"; document.getElementById("recommencer").style.visibility = "visible";};}
+        function imgstart() {
+            if (comptimg == 1) {imgonestart();}
+            if (comptimg == 2) {imgtwostart();}
+            if (comptimg == 3) {imgthrstart();}
+            if (comptimg == 4) {imgfoustart();}
+            if (comptimg == 5) {imgfivstart();}
+            if (comptimg == 6) {imgsixstart();}
+            if (comptimg == 7) {imgsevstart();}
+            if (comptimg == 8) {imgheistart();}
+            if (comptimg == 9) {imgninstart();}
+            comptimg+=1;
+            if (comptimg == 10) {comptimg = 1;}
+            setTimeout(imgstart,(2200*Math.random() + 1200 - 30*(score+1)));
+        }
+        
+        //<!-- BALLON 1 -->
+        function imgonestart() {xone = Math.random() * 700; yone = 0; delayone = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("one").style.left = xone+"px"; document.getElementById("one").style.visibility = "visible"; imgone();}
+        function imgone() {yone+=5; document.getElementById("one").style.top = yone+"px"; if (yone == 510 && xone > xpanier && xone < xpanier+60) {document.getElementById("one").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (yone > 610) {end();} else {setTimeout(imgone, delayone);};}
+        //<!-- BALLON 2 -->
+        function imgtwostart() {xtwo = Math.random() * 700; ytwo = 0; delaytwo = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("two").style.left = xtwo+"px"; document.getElementById("two").style.visibility = "visible"; imgtwo();}
+        function imgtwo() {ytwo+=5; document.getElementById("two").style.top = ytwo+"px"; if (ytwo == 510 && xtwo > xpanier && xtwo < xpanier+60) {document.getElementById("two").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (ytwo > 610) {end();} else {setTimeout(imgtwo, delaytwo);};}
+        //<!-- BALLON 3 -->
+        function imgthrstart() {xthr = Math.random() * 700; ythr = 0; delaythr = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("thr").style.left = xthr+"px"; document.getElementById("thr").style.visibility = "visible"; imgthr();}
+        function imgthr() {ythr+=5; document.getElementById("thr").style.top = ythr+"px"; if (ythr == 510 && xthr > xpanier && xthr < xpanier+60) {document.getElementById("thr").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (ythr > 610) {end();} else {setTimeout(imgthr, delaythr);};}
+        //<!-- BALLON 4 -->
+        function imgfoustart() {xfou = Math.random() * 700; yfou = 0; delayfou = ((5 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("fou").style.left = xfou+"px"; document.getElementById("fou").style.visibility = "visible"; imgfou();}
+        function imgfou() {yfou+=5; document.getElementById("fou").style.top = yfou+"px"; if (yfou == 510 && xfou > xpanier && xfou < xpanier+60) {document.getElementById("fou").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (yfou > 610) {end();} else {setTimeout(imgfou, delayfou);};}
+        //<!-- BALLON 5 -->
+        function imgfivstart() {xfiv = Math.random() * 700; yfiv = 0; delayfiv = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("fiv").style.left = xfiv+"px"; document.getElementById("fiv").style.visibility = "visible"; imgfiv();}
+        function imgfiv() {yfiv+=5; document.getElementById("fiv").style.top = yfiv+"px"; if (yfiv == 510 && xfiv > xpanier && xfiv < xpanier+60) {document.getElementById("fiv").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (yfiv > 610) {end();} else {setTimeout(imgfiv, delayfiv);};}
+        //<!-- BALLON 6 -->
+        function imgsixstart() {xsix = Math.random() * 700; ysix = 0; delaysix = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("six").style.left = xsix+"px"; document.getElementById("six").style.visibility = "visible"; imgsix();}
+        function imgsix() {ysix+=5; document.getElementById("six").style.top = ysix+"px"; if (ysix == 510 && xsix > xpanier && xsix < xpanier+60) {document.getElementById("six").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (ysix > 610) {end();} else {setTimeout(imgsix, delaysix);};}
+        //<!-- BALLON 7 -->
+        function imgsevstart() {xsev = Math.random() * 700; ysev = 0; delaysev = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("sev").style.left = xsev+"px"; document.getElementById("sev").style.visibility = "visible"; imgsev();}
+        function imgsev() {ysev+=5; document.getElementById("sev").style.top = ysev+"px"; if (ysev == 510 && xsev > xpanier && xsev < xpanier+60) {document.getElementById("sev").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (ysev > 610) {end();} else {setTimeout(imgsev, delaysev);};}
+        //<!-- BALLON 8 -->
+        function imgheistart() {xhei = Math.random() * 700; yhei = 0; delayhei = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("hei").style.left = xhei+"px"; document.getElementById("hei").style.visibility = "visible"; imghei();}
+        function imghei() {yhei+=5; document.getElementById("hei").style.top = yhei+"px"; if (yhei == 510 && xhei > xpanier && xhei < xpanier+60) {document.getElementById("hei").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (yhei > 610) {end();} else {setTimeout(imghei, delayhei);};}
+        //<!-- BALLON 9 -->
+        function imgninstart() {xnin = Math.random() * 700; ynin = 0; delaynin = ((25 * Math.random() + 75) - 3 * (score + 1))/2; document.getElementById("nin").style.left = xnin+"px"; document.getElementById("nin").style.visibility = "visible"; imgnin();}
+        function imgnin() {ynin+=5; document.getElementById("nin").style.top = ynin+"px"; if (ynin == 510 && xnin > xpanier && xnin < xpanier+60) {document.getElementById("nin").style.visibility = "hidden"; score+=1; document.getElementById("score").innerHTML = "Score: " + score;} else if (ynin > 610) {end();} else {setTimeout(imgnin, delaynin);};}
+        
+        
+        function panier() {
+            if (event.keyCode==37 && xpanier > 20) {xpanier-=40;};
+            if (event.keyCode==39 && xpanier < 1140) {xpanier+=40;};
+            document.getElementById("pannnier").style.left = xpanier+"px";
+        }
+        var chance = 3;
+        var xpanier = 585;
+        document.onkeydown = panier;
+        var score = 0;
+        var comptimg = 1;
+        imgstart();
+        }
+        
+    </script>
+</body>
+</html>
