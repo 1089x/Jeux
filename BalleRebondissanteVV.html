@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>La Balle Rebondissante</title>
-        <link rel="icon" type="image/png" sizes="100x100" href="https://cdn.discordapp.com/attachments/1069251048948113411/1110655874344689776/VVt.png">
+        <link rel="icon" type="image/png" sizes="100x100" href="https://1089x.github.io/Images/VVt.png">
         <style>
             .rectangle { position: absolute; left: 90px; top: 10px; width: 1000px; height:550px; border: 30px solid #005; padding: 8px 12px; background-color: #ddf; text-align: right; text-decoration: #005; font-size: 40px; visibility: hidden;}
             button {background-color: red; border-color:gold; font-size:50px; margin: 0 auto; text-align: center; color: blue; padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center;}
@@ -13,11 +13,11 @@
     </head>
     <body style="background-color: black;">
         <div id="rectangle"; class="rectangle"><p id="time">0</p></div>
-        <img id="image" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110655874344689776/VVt.png" width=50px style="position: absolute; top: 500px; left: 570px; visibility: hidden;"/>
+        <img id="image" src="https://1089x.github.io/Images/VVt.png" width=50px style="position: absolute; top: 500px; left: 570px; visibility: hidden;"/>
         <div id="raquette" style="width: 120px; height:20px; background-color:#777; position: absolute; top: 550px; left: 570px; visibility: hidden;"></div>
         <h1 id="score"; style="color: red; text-align: center; font-size: 200px;"></h1>
         <div id="startt" class="start"><p>Utilisez les flèches droite et gauche</br>pour diriger la raquette,</br>afin que la "balle" ne touche pas le sol.</p><button onclick="start()">Start</button></div>
-        <button id="Brecommencer" onclick="document.location.href='https://1089x.github.io/Jeux/BalleRebondissanteVV';" style="background-color: black; border-color:gold; font-size:20px; position: absolute; top: 10px; right: 10px; color: red; visibility: hidden;">Recommencer</button>
+        <button id="Brecommencer" onclick="location.reload()';" style="background-color: black; border-color:gold; font-size:20px; position: absolute; top: 10px; right: 10px; color: red; visibility: hidden;">Recommencer</button>
         <script language="JavaScript">
             function start() {startt.remove(); loop(); time(); document.getElementById("rectangle").style.visibility = "visible"; document.getElementById("image").style.visibility = "visible"; document.getElementById("raquette").style.visibility = "visible";}
             function time() {vtime+=1; document.getElementById("time").innerHTML = vtime; setTimeout(time,1000);}
