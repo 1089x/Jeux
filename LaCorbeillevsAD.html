@@ -6,12 +6,15 @@
     <link rel="icon" type="image/png" sizes="100x100" href="https://cdn.discordapp.com/attachments/1069251048948113411/1110657144505782412/ad.png">
     <style>
         img {width:50px; position: absolute; top: 500px; left: 570px; visibility: hidden;}
-        .affichage {width:170px; border: 1px solid #00f; background-color: #21f; text-align: center; font-size: 15px; margin-left: None; margin-right: auto; margin-top: 8px;}
-        button {background-color: red; border-color:gold; font-size:50px; margin: 0 auto; text-align: center; color: blue; padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center;}
-        .start {background-color: #a00; width: 400px; height:250px; border: 3px solid blue; color: #44f; margin: 0 auto; text-align: center;}
+        .affichage {width:170px; border: 1px solid rgb(115, 117, 0); border-radius: 8px; background-color: #21f; text-align: center; font-size: 15px; margin-left: None; margin-right: auto; margin-top: 8px;}
+        button {background-color: rgb(187, 0, 0); border-color:gold; font-size:50px; margin: 0 auto; text-align: center; color: rgb(0, 255, 42); padding: 10px 20px; border-radius: 5px; display: flex; justify-content: center; align-items: center;}
+        button:hover {background-color: rgb(211, 50, 0); color: rgb(238, 255, 0);}
+        .start {background-color: rgb(119, 0, 0); width: 400px; height:250px; border: 1px solid rgb(0, 255, 221); border-radius: 8px; margin: 0 auto; text-align: center; color: rgb(255, 243, 68);}
+        .recommencer {background-color: #00f; color: rgb(0, 0, 0); font-size:40px; visibility: hidden; }
+        .recommencer:hover {background-color: rgb(74, 0, 211); color: rgb(238, 255, 0);}
     </style>
 </head>
-<body style="background-color: #ddf;">
+<body style="background-color: #001; font-family: 'helvetica';">
     <div class="affichage" id="affichage" ><h1 id="score">Score: 0</h1><h2 id="chances">Chances: 3</h2></div>
     <img id="pannnier" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110656019085922425/corbeillecomp.png" style="width: 110px; height:110px; position: absolute; top: 570px; left: 585px; visibility: visible;"></img>
     <img id="one" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110657144505782412/ad.png"/>
@@ -25,7 +28,7 @@
     <img id="nin" src="https://cdn.discordapp.com/attachments/1069251048948113411/1110657144505782412/ad.png"/>
     <div id="start" class="start"><p>Pour déplacer la poubelle,</br>utiliser les flèches droite et gauche.</p><button onclick="loop()">Start</button></div>
     </br>
-    <button id="recommencer" onclick="recommencer()" style="background-color: #00f; color: #ddf; visibility: hidden;">Recommencer</button>
+    <button id="recommencer" class="recommencer" onclick="recommencer()">Recommencer</button>
 
     <script LANGUAGE="JavaScript">
         function recommencer() {document.location.href="https://1089x.github.io/Jeux/LaCorbeillevsAD";};
