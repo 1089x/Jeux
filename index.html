@@ -25,6 +25,31 @@
         function LaCorbeilleVV() {document.location.href="https://1089x.github.io/Jeux/LaCorbeillevsVV"};
         function BalleRebondissanteVV() {document.location.href="https://1089x.github.io/Jeux/BalleRebondissanteVV"};
     </script>
+    <script>
+        var cr = 0;
+        var cg = 0;
+        var cb = 150;
+        document.getElementById("body").style.backgroundColor = "rgb(" + cr + ", " + cg + ", " + cb + ")";
+        function fr() {
+            document.getElementById("body").style.backgroundColor = "rgb(" + cr + ", " + cg + ", " + cb + ")";
+            cr+=1;
+            cb-=1;
+            if(cb > 0) {setTimeout(fr,10);} else{fg();}
+        }
+        function fg() {
+            document.getElementById("body").style.backgroundColor = "rgb(" + cr + ", " + cg + ", " + cb + ")";
+            cg+=1;
+            cr-=1;
+            if(cr > 0) {setTimeout(fg,10);} else{fb();}
+        }
+        function fb() {
+            document.getElementById("body").style.backgroundColor = "rgb(" + cr + ", " + cg + ", " + cb + ")";
+            cb+=1;
+            cg-=1;
+            if(cg > 0) {setTimeout(fb,10);} else{fr();}
+        }
+        fr();
+    </script>
 </body>
 </html>
 
