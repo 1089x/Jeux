@@ -9,23 +9,14 @@
         button:hover {background-color: rgb(255, 153, 0); transition: 1000ms;border-color: #700;color: #602; font-size:31px;}  
     </style>
 </head>
-<body style="background-color: #300">
+<body id="body" style="background-color: #300">
     <div class="button container" style="display: flex; flex-direction: column; vertical-align: middle; height: 98vh; justify-content: center;gap: 15px;">
-        <button onclick="LaCorbeilleAD()">La Corbeille A.D.</button>
-        <button onclick="LaCorbeilleML()">La Corbeille M.L.</button>
-        <button onclick="LaCorbeilleVV()">La Corbeille V.V.</button>
-        <button onclick="BalleRebondissanteVV()">Balle Rebondissante V.V.</button>
+        <button onclick="document.location.href='LaCorbeillevsAD'">La Corbeille A.D.</button>
+        <button onclick="document.location.href='LaCorbeillevsML'">La Corbeille M.L.</button>
+        <button onclick="document.location.href='LaCorbeillevsVV'">La Corbeille V.V.</button>
+        <button onclick="document.location.href='BalleRebondissanteVV'">Balle Rebondissante V.V.</button>
     </div>
-
-
-
     <script language="JavaScript">
-        function LaCorbeilleAD() {document.location.href="https://1089x.github.io/Jeux/LaCorbeillevsAD"};
-        function LaCorbeilleML() {document.location.href="https://1089x.github.io/Jeux/LaCorbeillevsML"};
-        function LaCorbeilleVV() {document.location.href="https://1089x.github.io/Jeux/LaCorbeillevsVV"};
-        function BalleRebondissanteVV() {document.location.href="https://1089x.github.io/Jeux/BalleRebondissanteVV"};
-    </script>
-    <script>
         var cr = 0;
         var cg = 0;
         var cb = 150;
