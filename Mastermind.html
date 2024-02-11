@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The original Mastermind game">
     <title>Mastermind</title>
-    <link rel="icon" type="image/png" href="..\..\..\Pictures\Images\cerveau_bleu.png">
+    <link rel="icon" type="image/png" href="https://1089x.github.io/Images/cerveau_bleu.png">
     <style>
         body{margin: 0; padding: 0; background-color: #001; color: rgb(150, 150, 150);}
         .main{display: flex;
@@ -290,115 +291,4 @@
         document.getElementById("recommencer").addEventListener("click", function() {location.reload()});
     </script>
 </body>
-
 </html>
-
-
-<!--
-visibility: hidden;
-
-        document.getElementById("valider").addEventListener("click", function() {
-            console.log("ENTER");
-            var blancs = 0;
-            var noirs = 0;
-            for (var i=0;i<4;i++) {
-                for (var j=0;j<4;j++){
-                    if(code[i]==couleur_pions[j+4*n_ligne]){
-                        if(i==j){ {noirs+=1};}
-                        else{blancs++};
-                    };
-
-                };
-            };
-            console.log(noirs,blancs)
-            n_ligne+=1
-        });
--->
-
-
-
-
-
-<!--
-var maListe = ["élément1", "élément2", "élément3"];
-
-// Ajouter une chaîne de caractères à la liste
-var nouvelleChaine = "nouvel élément";
-maListe.push(nouvelleChaine);
--->
-
-<!--
-// Liste de couleurs
-var couleurs = ["red", "blue", "green", "orange", "purple"];
-
-// Sélectionner toutes les divs ayant la classe "maClasse"
-var divs = document.querySelectorAll(".maClasse");
-
-// Parcourir chaque div et lui associer une couleur
-divs.forEach(function(div, index) {
-  var couleur = couleurs[index % couleurs.length]; // Utilisation du modulo pour boucler sur la liste de couleurs
-  div.style.backgroundColor = couleur;
-});
-
--->
-
-
-<!--
-// Sélectionnez toutes les div avec la classe "myDiv"
-var divs = document.querySelectorAll(".myDiv");
-
-// Parcourez chaque div et ajoutez un gestionnaire d'événements à chacune
-divs.forEach(function(div) {
-  div.addEventListener("click", function() {
-    // Action à effectuer lors du clic sur chaque div
-    alert("Vous avez cliqué sur une div !");
-  });
-});
--->
-
-
-<!--
-document.getElementById("myDiv").addEventListener("click", function() {
-  // Action à effectuer lors du clic sur la div
-  alert("Vous avez cliqué sur la div !");
-});
--->
-
-<!--
-    colorDivs.forEach((colorDiv, index) => {
-        colorDiv.style.backgroundColor = colors[index];
-        colorDiv.addEventListener('click', () => selectColor(colors[index]));
-    });
--->
-
-
-<!--
-        body{margin: 0; padding: 0;}
-        .main{display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100vh;
-            min-height: 600px;
-            background-color: #001;
-        }
-        .plateau{
-            margin: 30px;
-            width: 350px;
-            height: 90%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: brown;}
--->
-
-<!--
-    <script language="JavaScript">
-        function cursor1(){document.getElementById("main").style.cursor = "none"; setTimeout(cursor2,30);}
-        function cursor2(){document.getElementById("main").style.cursor = "not-allowed"; setTimeout(cursor3,40);}
-        function cursor3(){document.getElementById("main").style.cursor = "wait"; setTimeout(cursor4,50);}
-        function cursor4(){document.getElementById("main").style.cursor = "help"; setTimeout(cursor1,40);}
-        cursor1()
-    </script>
--->
-
