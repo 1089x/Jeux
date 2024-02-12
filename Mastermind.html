@@ -228,17 +228,18 @@
             div.style.backgroundColor = couleur;
             div.addEventListener("click", function() {
             couleur_selectionne = couleurs[index];
-            couleurs_p.forEach(function(div, index) {div.style.borderColor = "rgb(180, 180, 180)";});
-            div.style.borderColor = "aqua";
+            couleurs_p.forEach(function(div, index) {div.style.borderColor = "rgb(180, 180, 180)"; div.style.width = "38px"; div.style.height = "38px"; div.style.borderWidth = "1px"});
+            div.style.borderColor = "aqua"; div.style.width = "34px"; div.style.height = "34px"; div.style.borderWidth = "3px";
             });
         });
 
         var pions = document.querySelectorAll(".pion");
         pions.forEach(function(div,index) {
             div.addEventListener("click", function() {
-            if (couleur_pions[index]==couleur_selectionne){div.style.backgroundColor = "#002"; couleur_pions[index]="#002";}
-            else{div.style.backgroundColor = couleur_selectionne; couleur_pions[index]=couleur_selectionne;}
-            
+                if(index >= n_ligne*4){
+                    if (couleur_pions[index]==couleur_selectionne){div.style.backgroundColor = "#002"; couleur_pions[index]="#002";}
+                    else{div.style.backgroundColor = couleur_selectionne; couleur_pions[index]=couleur_selectionne;};
+                };
             });
         });
 
